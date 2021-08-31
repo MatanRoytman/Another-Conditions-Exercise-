@@ -8,10 +8,10 @@
 */
 
 function guessCity(capital, coastal, famous, ancient) {
-    capital = capital ? b1000 : 0
-    coastal = coastal ? b0100 : 0
-    famous = famous ? b0010 : 0
-    ancient = ancient ? b0001 : 0
+    capital = capital ? 0b1000 : 0
+    coastal = coastal ? 0b0100 : 0
+    famous = famous ? 0b0010 : 0
+    ancient = ancient ? 0b0001 : 0
     const val = capital | coastal | famous | ancient;
     switch (val) {
         case ancient | famous | capital:
