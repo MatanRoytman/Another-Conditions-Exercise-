@@ -13,6 +13,20 @@ function guessCity(capital, coastal, famous, ancient) {
     famous = famous ? 0b0010 : 0
     ancient = ancient ? 0b0001 : 0
     const val = capital | coastal | famous | ancient;
+    const places = {
+    0b1011: "Jerusalem",
+    0b0110: "Tel Aviv",
+    0b0101: "Acre",
+    0b0001: "Katzrin",
+    0b0100: "Zikim",
+    0b0000:"Musmus";
+}
+    if (val in places) {
+        return places[val];
+    } else {
+        return ""
+    }
+}
     switch (val) {
         case ancient | famous | capital:
             return "Jerusalem";
@@ -30,3 +44,5 @@ function guessCity(capital, coastal, famous, ancient) {
             return "";
     }
 }
+console.log(guessCity(false, false, false, true));
+
